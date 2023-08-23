@@ -35,12 +35,17 @@ public class CuentaBanco {
 	}
 	
 	public void ingresar(double cantidad) {
+		double cantaux = this.cantidad;
 		this.cantidad = this.cantidad + cantidad;
+		if (this.cantidad<0) {
+			this.cantidad=0;}
 	}
 	
 	public void retirar(double cantidad) {
+		double cantaux = this.cantidad;
 		this.cantidad = this.cantidad-cantidad;
-		if (this.cantidad<0)
-			this.cantidad=0;
+		if (this.cantidad<0) {
+			System.out.println("Solo se puede retirar: "+cantaux);
+			this.cantidad=0;}
 	}
 }
